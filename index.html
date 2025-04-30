@@ -30,7 +30,9 @@
         <li><i class="fa-solid fa-magnifying-glass"></i></li>
         <li><i class="fa-regular fa-moon"></i></li>
       </ul>
-      <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+      </button>
     </div>
   </nav>
 
@@ -239,11 +241,43 @@
     <div class="footer-icons"><i class="fa-brands fa-pinterest"></i></div>
     <div class="footer-icons"><i class="fa-brands fa-vk"></i></div>
   </div>
-  <div class="turn-up">
-    <i class="fa-solid fa-turn-up" style="color: #ffffff;"></i>
-  </div>
+  <a href="#" class="turn-up">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
 </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = menuToggle.contains(event.target) || navLinks.contains(event.target);
+      if (!isClickInside && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Toggle menu when clicking the hamburger icon
+    menuToggle.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent the click from bubbling up
+      navLinks.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
