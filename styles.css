@@ -567,7 +567,8 @@
   @media (max-width: 820px) {
     .fa-bars {
       display: block;
-    }
+      visibility: visible;
+  }
     .fa-magnifying-glass{
       visibility: hidden;
     }
