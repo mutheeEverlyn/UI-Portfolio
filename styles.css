@@ -602,6 +602,15 @@
     .fa-angle-down{
       visibility: hidden;
     }
+    .bio-content{
+      margin: 10px;
+    }
+    .bio-image img{
+      width: 100%;
+    }
+    .skills-heading,.right-content p,.right-content ul{
+      margin: 20px 20px;
+     }
     .footer{
       margin: 0;
     }
