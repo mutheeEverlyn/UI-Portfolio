@@ -35,4 +35,3 @@ This UI Portfolio project was developed as part of a group assignment. The follo
 
 
 
-
